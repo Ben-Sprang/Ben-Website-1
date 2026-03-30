@@ -1,0 +1,243 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <Title>Count Down</Title>
+            <link rel="stylesheet" href="style.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <style>
+
+            body {
+            margin: 0;
+            font-family: sans-serif;
+            }
+
+    #demo {
+        /*position: fixed;      
+        top: 20%;                
+        left: 50%;             
+        transform: translate(-50%, -50%); */
+        color: whitesmoke;           
+        font-size: 7em;          
+        text-align: center;
+        /*background: rgba(0,0,0,0.5); 
+        border-radius: 15px; 
+        z-index: 1000; */
+        
+    }
+
+    /* Announcement box*/
+
+.announcement-box{
+    background-color: rgba(0, 0, 0, 0.5);
+
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  max-width: 900px;
+  max-height: 350px;
+  position: relative;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
+
+.announcement-box p{
+    font-size: 16px;
+    color: white;
+}
+
+/*Contact Us Box*/
+
+
+
+.contact-us-box p{
+    font-size: 15px;
+    color: white;
+}
+
+       </style>
+    </head>
+
+    <body>
+        
+    <canvas id="fireworks"></canvas>
+
+        <!-- Countdown wrapper -->
+    <div id="countdown-wrapper">
+    
+
+        
+        <div class="time-column">
+            <span id="days">0</span>
+            <span class="label">Days</span>
+        </div>
+        <span class="colon">:</span>
+
+        <div class="time-column">
+            <span id="hours">0</span>
+            <span class="label">Hours</span>
+        </div>
+        <span class="colon">:</span>
+
+        <div class="time-column">
+            <span id="minutes">0</span>
+            <span class="label">Minutes</span>
+        </div>
+        <span class="colon">:</span>
+
+        <div class="time-column">
+            <span id="seconds">0</span>
+            <span class="label">Seconds</span>
+        </div>
+    </div>
+
+    <script>
+
+/* calulates the timer */
+    var countDownDate = new Date("August 1, 2026 16:00:00Z").getTime();
+
+    var x = setInterval(function () {
+
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML =  hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+        
+        
+        /*fire work*/
+
+        const canvas = document.getElementById("fireworks");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+
+// Particle class
+class Particle {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.vx = (Math.random() - 0.5) * 6;
+        this.vy = (Math.random() - 0.5) * 6;
+        this.alpha = 1;
+    }
+
+    update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vy += 0.05; // gravity
+        this.alpha -= 0.01;
+    }
+
+    draw() {
+        ctx.globalAlpha = this.alpha;
+        ctx.fillStyle = "white";
+        ctx.fillRect(this.x, this.y, 2, 2);
+    }
+}
+
+// Explosion function
+function explode(x, y) {
+    for (let i = 0; i < 100; i++) {
+        particles.push(new Particle(x, y));
+    }
+}
+
+// Animation loop
+function animateFireworks() {
+
+    particles.forEach((p, i) => {
+        p.update();
+        p.draw();
+
+        if (p.alpha <= 0) {
+            particles.splice(i, 1);
+        }
+    });
+
+    requestAnimationFrame(animateFireworks);
+}
+
+animateFireworks();
+
+/* End Firework*/
+
+        if (distance <= 0 ) {
+            clearInterval(x);
+            var display = document.getElementById("countdown-wrapper");
+            var announcement = document.querySelector(".announcement-box");
+            var contact = document.querySelector(".contact-us-box");
+            
+            display.classList.add("expired");
+            announcement.style.display = "none";
+            contact.style.display = "none";
+            explode(canvas.width / 2, canvas.height / 2);
+         }
+
+    }, 1000);
+
+    
+    </script>
+
+
+
+
+
+
+        <div class = "container">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+
+        <div class = "announcement-box">
+            
+            <p>Good morning everyone! <br> <br>
+
+            Before we begin, here’s a quick joke: Jesus was teaching the children one day, 
+            and a boy asked him, “Are you a good carpenter?” And he replied, “Yes, but only 
+            because my father has been in construction a looong time.” <br> <br>
+
+            On August 1 and 2, we’re encouraging everyone to take a simple step—invite someone to 
+            come to church with you. A friend, a neighbor, a coworker, or a family member. Sometimes 
+            people are just waiting for someone to ask. <br> <br>
+
+            So mark your calendars for August 1 or August 2 and think of one or two people you could 
+            invite to sit with you. A personal invitation can mean more than you realize. <br> <br>
+
+            Again, that’s August 1 and 2—a great weekend to bring someone along and share the experience 
+            of church together. <br> <br>
+
+            We’re looking forward to seeing who God brings through those invitations on August 1 or August 2!</p>
+            
+            <!-- Download PDF Button-->
+            <a href="https://drive.google.com/file/d/1D3QXtJMI_9Le9v1SNtNCY_L8ZwgjDI13/view?usp=sharing" target="_blank" class="pdf-button"> Download PDF</a>
+        </div>
+
+        <div class = "contact-us-box">
+            <p> Contact us for more information at <a href="mailto:packthepew@gmail.com"> packthepew@gmail.com</a> </p>
+            <!-- link for the email-->
+             
+
+        </div>
+    
+
+    </body>
+</html>
+
+
+
