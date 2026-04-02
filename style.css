@@ -83,7 +83,7 @@ body{
 
 
 #countdown-wrapper {
-    min-width: 1000px;
+    min-width: 60%;
     position: fixed;
     top: 20%;               /* adjust vertical position */
     left: 50%;
