@@ -166,7 +166,9 @@ body{
 
 
 .announcement-box{
-  position: fixed;
+  position: static;
+  display: flex;
+  flex-direction: column;
   top: 50%;
   left: 50%;
   transform: translate(-52%, -35%);
