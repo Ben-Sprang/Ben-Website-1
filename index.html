@@ -38,11 +38,22 @@
   border-radius: 0.625rem;
   max-width: 900px;
   width: 90%;
+  overflow: visible;
   /*max-height: 350px;*/
   position: relative;
   top: 20rem;
   z-index: 1000;
   font-family: Arial, sans-serif;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .announcement-box {
+    top: 1.5rem;      /* less vertical offset */
+    width: 95%;        /* fill more horizontal space */
+    max-height: none;  /* allow full height */
+    overflow: visible; /* let users scroll naturally */
+  }
 }
 
 .announcement-box p{
