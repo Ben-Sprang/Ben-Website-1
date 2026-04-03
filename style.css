@@ -274,8 +274,8 @@ body{
 
 @media (max-width: 600px) {
   .contact-us-box {
-    width: 90%;
-    margin: 1.5rem auto;
+    width: 70%;
+    margin: 0.5rem auto;
   }
 }
 
