@@ -84,10 +84,14 @@ body{
 
 #countdown-wrapper {
     min-width: 60%;
-    position: fixed;
-    top: 20%;               /* adjust vertical position */
+    position: relative;
+    margin: 4rem auto 2rem;
+    top: auto;
+    left: auto; 
+    transform: none;
+    /*top: 20%;               
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/ 
     text-align: center;
     display: flex;
     justify-content: center;
@@ -221,7 +225,8 @@ html, body {
     padding: 0;
     height: 100%;
     background: transparent;
-    overflow: hidden; /* optional: removes scroll gaps */
+    overflow-x: hidden; /* optional: removes scroll gaps */
+    overflow-y: auto;
 }
 
 /*removes stuff from screen and displays cross with wording*/
