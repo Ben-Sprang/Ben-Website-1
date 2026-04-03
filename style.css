@@ -196,6 +196,12 @@ body{
     }
 }
 
+@media (max-width: 600px) {
+    #labels {
+        gap: 20px;  /* less space between labels */
+    }
+}
+
 /* Labels below the clock */
 #labels {
     display: flex;
