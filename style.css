@@ -171,11 +171,12 @@ body{
 
 .announcement-box{
   position: static;
-  display: flex;
-  flex-direction: column;
+  /*display: flex;
+  flex-direction: column;*/
   
   margin: 2rem auto;
-  
+  max-width: 900px;
+  width: 90%;
   background: rgba(0, 0, 0, 0.7);
   /*color: white;*/
   padding: 20px;
@@ -188,15 +189,15 @@ body{
 
 .pdf-button {
   display: inline-block;
-  padding: 12px 25px;
-  margin-top: 15px;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
   background-color: darkgray;
   color: white;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
   transition: background 0.3s;
-  transform: translate(224%);
+  /*transform: translate(224%);*/
 }
 
 .pdf-button:hover {
