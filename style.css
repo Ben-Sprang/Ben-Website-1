@@ -95,6 +95,7 @@ body{
 
 #countdown-wrapper {
     min-width: 60%;
+    max-width: 800px;
     position: relative;
     margin: 2rem auto 2rem;
     top: auto;
