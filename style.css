@@ -200,6 +200,10 @@ body{
   /*transform: translate(224%);*/
 }
 
+.pdf-button {
+  align-self: center;
+}
+
 .pdf-button:hover {
   background-color: #005fa3;
 }
