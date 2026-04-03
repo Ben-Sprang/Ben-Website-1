@@ -161,11 +161,39 @@ body{
 
 
 /* Clock numbers */
-#demo {
+/*#demo {
     color: whitesmoke;
     font-size: 8em;
     
     margin: 0;
+}*/
+
+#demo, .time-column span:first-child {
+    font-size: 8em;       /* big on desktop */
+}
+
+.colon {
+    font-size: 5em;
+    margin: 0 50px;
+}
+
+.time-column .label {
+    font-size: 1.75em;
+}
+
+@media (max-width: 600px) {
+    #demo, .time-column span:first-child {
+        font-size: 3em;       /* smaller on mobile */
+    }
+
+    .colon {
+        font-size: 2em;
+        margin: 0 10px;
+    }
+
+    .time-column .label {
+        font-size: 1em;       /* smaller labels */
+    }
 }
 
 /* Labels below the clock */
