@@ -221,16 +221,26 @@ body{
 .contact-us-box{
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
-    margin: 20px;
+    margin: 2rem auto;
     border-radius: 10px;
+    
     position: relative;
     z-index: 1000;
     max-width: 600px;
-    transform: translate(+50%, -100%);
+    width: 90%;
+    
+    /*transform: translate(+50%, -100%);*/
     font-family: Arial, sans-serif;
-    top: 50%;
-    right: -11.5%;
+    /*top: 50%;
+    right: -11.5%;*/
     text-align: center;
+}
+
+@media (max-width: 600px) {
+  .contact-us-box {
+    width: 95%;
+    margin: 1.5rem auto;
+  }
 }
 
 
